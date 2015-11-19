@@ -17,7 +17,7 @@ TrailerStream is an entertainment app for iOS that enables you to watch trailers
 
 Clone the sample app repository to your computer.
 Double click on TrailerStream.xcodeproj to launch XCode.
-Choose the application target and run! You should be greeted by the following 
+Choose the application target and run!
 
 ##Contributors
   * Ahmed Onawale
