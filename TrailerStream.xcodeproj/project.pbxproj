@@ -23,10 +23,16 @@
 		859CCFA11BFB8CD30099C705 /* TaskCancelingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859CCFA01BFB8CD30099C705 /* TaskCancelingTableViewCell.swift */; };
 		859CCFA31BFB937B0099C705 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859CCFA21BFB937B0099C705 /* MovieDetailViewController.swift */; };
 		859CCFA51BFCBD200099C705 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859CCFA41BFCBD200099C705 /* Config.swift */; };
-		859CCFAE1BFCE2EC0099C705 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859CCFAD1BFCE2DB0099C705 /* YouTubePlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		85418FD91BFF16E700C61F7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 502AE85F1A475FD500306AD1;
+			remoteInfo = YouTubePlayer;
+		};
 		859CCF751BFB801F0099C705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 859CCF581BFB801E0099C705 /* Project object */;
@@ -41,16 +47,10 @@
 			remoteGlobalIDString = 859CCF5F1BFB801E0099C705;
 			remoteInfo = TrailerStream;
 		};
-		859CCFAC1BFCE2DB0099C705 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 859CCFA81BFCE2DB0099C705 /* YouTubePlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 502AE85F1A475FD500306AD1;
-			remoteInfo = YouTubePlayer;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YouTubePlayer.xcodeproj; path = YouTubePlayer/YouTubePlayer.xcodeproj; sourceTree = "<group>"; };
 		859CCF601BFB801E0099C705 /* TrailerStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailerStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859CCF631BFB801E0099C705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859CCF681BFB801F0099C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		859CCFA01BFB8CD30099C705 /* TaskCancelingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCancelingTableViewCell.swift; sourceTree = "<group>"; };
 		859CCFA21BFB937B0099C705 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		859CCFA41BFCBD200099C705 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		859CCFA81BFCE2DB0099C705 /* YouTubePlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YouTubePlayer.xcodeproj; path = "../../../Downloads/Swift-YouTube-Player-master/YouTubePlayer/YouTubePlayer.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				859CCFAE1BFCE2EC0099C705 /* YouTubePlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +100,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85418FD61BFF16E700C61F7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85418FDA1BFF16E700C61F7D /* YouTubePlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		859CCF571BFB801E0099C705 = {
 			isa = PBXGroup;
 			children = (
-				859CCFA81BFCE2DB0099C705 /* YouTubePlayer.xcodeproj */,
+				85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */,
 				859CCF621BFB801E0099C705 /* TrailerStream */,
 				859CCF771BFB801F0099C705 /* TrailerStreamTests */,
 				859CCF821BFB801F0099C705 /* TrailerStreamUITests */,
@@ -161,14 +167,6 @@
 				859CCF851BFB801F0099C705 /* Info.plist */,
 			);
 			path = TrailerStreamUITests;
-			sourceTree = "<group>";
-		};
-		859CCFA91BFCE2DB0099C705 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				859CCFAD1BFCE2DB0099C705 /* YouTubePlayer.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +261,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 859CCFA91BFCE2DB0099C705 /* Products */;
-					ProjectRef = 859CCFA81BFCE2DB0099C705 /* YouTubePlayer.xcodeproj */;
+					ProductGroup = 85418FD61BFF16E700C61F7D /* Products */;
+					ProjectRef = 85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -277,11 +275,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		859CCFAD1BFCE2DB0099C705 /* YouTubePlayer.framework */ = {
+		85418FDA1BFF16E700C61F7D /* YouTubePlayer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = YouTubePlayer.framework;
-			remoteRef = 859CCFAC1BFCE2DB0099C705 /* PBXContainerItemProxy */;
+			remoteRef = 85418FD91BFF16E700C61F7D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -555,6 +553,7 @@
 				859CCF8A1BFB801F0099C705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		859CCF8B1BFB801F0099C705 /* Build configuration list for PBXNativeTarget "TrailerStreamTests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +562,7 @@
 				859CCF8D1BFB801F0099C705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		859CCF8E1BFB801F0099C705 /* Build configuration list for PBXNativeTarget "TrailerStreamUITests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +571,7 @@
 				859CCF901BFB801F0099C705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
