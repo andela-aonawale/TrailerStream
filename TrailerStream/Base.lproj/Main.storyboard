@@ -17,40 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Co3-vQ-E9C">
-                                <rect key="frame" x="0.0" y="64" width="320" height="28"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O1k-wu-4WY">
-                                        <rect key="frame" x="8" y="0.0" width="304" height="29"/>
-                                        <animations/>
-                                        <segments>
-                                            <segment title="Upcoming"/>
-                                            <segment title="Popular"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="handleSegementChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="cTx-4L-hEX"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-wR-boz">
-                                        <rect key="frame" x="150" y="28" width="20" height="0.0"/>
-                                        <animations/>
-                                    </activityIndicatorView>
-                                </subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O1k-wu-4WY">
+                                <rect key="frame" x="8" y="64" width="304" height="29"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstItem="5EP-wR-boz" firstAttribute="top" secondItem="O1k-wu-4WY" secondAttribute="bottom" constant="8" id="8d7-nd-AWd"/>
-                                    <constraint firstItem="O1k-wu-4WY" firstAttribute="top" secondItem="Co3-vQ-E9C" secondAttribute="top" id="Jcb-e3-4Er"/>
-                                    <constraint firstItem="O1k-wu-4WY" firstAttribute="leading" secondItem="Co3-vQ-E9C" secondAttribute="leading" constant="8" id="Pe0-kh-SXv"/>
-                                    <constraint firstAttribute="trailing" secondItem="O1k-wu-4WY" secondAttribute="trailing" constant="8" id="z5X-Q8-drv"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8d7-nd-AWd"/>
-                                    </mask>
-                                </variation>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-v2-DZd">
-                                <rect key="frame" x="0.0" y="128" width="320" height="440"/>
+                                <segments>
+                                    <segment title="Upcoming"/>
+                                    <segment title="Popular"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleSegementChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="cTx-4L-hEX"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-v2-DZd">
+                                <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -75,18 +54,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fUd-v2-DZd" secondAttribute="trailing" id="4fz-rI-fWl"/>
-                            <constraint firstItem="fUd-v2-DZd" firstAttribute="top" secondItem="Co3-vQ-E9C" secondAttribute="bottom" constant="8" id="BUg-lQ-NUU"/>
-                            <constraint firstAttribute="trailing" secondItem="Co3-vQ-E9C" secondAttribute="trailing" id="EMj-JZ-AwG"/>
+                            <constraint firstItem="O1k-wu-4WY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5WX-Mb-mx7"/>
+                            <constraint firstItem="fUd-v2-DZd" firstAttribute="top" secondItem="O1k-wu-4WY" secondAttribute="bottom" constant="8" id="EJg-B9-8xy"/>
                             <constraint firstItem="fUd-v2-DZd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HqJ-if-4bL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fUd-v2-DZd" secondAttribute="bottom" id="SZz-Ma-Rgi"/>
-                            <constraint firstItem="Co3-vQ-E9C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZeV-Cf-tm3"/>
-                            <constraint firstItem="Co3-vQ-E9C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uWr-Lo-NaN"/>
+                            <constraint firstAttribute="trailing" secondItem="O1k-wu-4WY" secondAttribute="trailing" constant="8" id="axQ-dR-tWV"/>
+                            <constraint firstItem="O1k-wu-4WY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="hPS-Cw-PX5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TrailerStream" id="ihX-jw-loo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="5EP-wR-boz" id="mJd-zE-XDg"/>
                         <outlet property="segmentedControl" destination="O1k-wu-4WY" id="85H-89-NBK"/>
                         <outlet property="tableView" destination="fUd-v2-DZd" id="RlZ-QY-U3B"/>
                         <segue destination="Q2k-vr-4yS" kind="presentation" identifier="Show Movie Detail" id="Fvw-pO-ASP"/>
@@ -129,6 +107,10 @@
                                     <constraint firstAttribute="bottom" secondItem="RO6-co-ar5" secondAttribute="bottom" constant="220" id="TTN-kf-SCF"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HUN-NI-dqG">
+                                <rect key="frame" x="150" y="192" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,6 +118,8 @@
                             <constraint firstItem="qW8-Pn-ihd" firstAttribute="leading" secondItem="6an-A8-aez" secondAttribute="leading" id="5Fz-LG-7ri"/>
                             <constraint firstItem="qW8-Pn-ihd" firstAttribute="top" secondItem="FcF-7t-hPe" secondAttribute="bottom" id="MgE-36-Ygn"/>
                             <constraint firstAttribute="trailing" secondItem="qW8-Pn-ihd" secondAttribute="trailing" id="PKU-XW-nsl"/>
+                            <constraint firstItem="HUN-NI-dqG" firstAttribute="centerX" secondItem="RO6-co-ar5" secondAttribute="centerX" id="aT5-xk-jKM"/>
+                            <constraint firstItem="HUN-NI-dqG" firstAttribute="centerY" secondItem="RO6-co-ar5" secondAttribute="centerY" id="dpW-ND-U9w"/>
                             <constraint firstItem="vXw-Fc-Vsf" firstAttribute="top" secondItem="qW8-Pn-ihd" secondAttribute="bottom" constant="8" id="pxc-er-l51"/>
                         </constraints>
                     </view>
@@ -147,6 +131,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="HUN-NI-dqG" id="WBl-jo-fDo"/>
                         <outlet property="overview" destination="1Q6-8k-Hmz" id="gdQ-n9-y5Y"/>
                         <outlet property="videoPlayer" destination="RO6-co-ar5" id="qss-7V-G4L"/>
                     </connections>

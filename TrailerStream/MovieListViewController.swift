@@ -13,7 +13,6 @@ class MovieListViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func handleSegementChange(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -24,7 +23,7 @@ class MovieListViewController: UIViewController {
         default:
             break
         }
-        performFetch()
+        performFetchWithCompletionHandler(nil)
         tableView.reloadData()
         saveSelectedSegmentIndex(sender.selectedSegmentIndex)
     }
@@ -85,15 +84,24 @@ class MovieListViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func performFetch() {
+    func showStatusBarActivityIndicator() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func hideStatusBarActivityIndicator() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func performFetchWithCompletionHandler(completionHandler: (Void -> Void)?) {
         if fetchedResultsController.fetchedObjects!.isEmpty {
-            activityIndicator.startAnimating()
+            showStatusBarActivityIndicator()
             if segmentedControl.selectedSegmentIndex == 0 {
                 TheMovieDB.sharedInstance.fetchUpcomingMovies { result, error in
                     guard error == nil, let results = result?["results"] as? [[String: AnyObject]] else {
                         dispatch_async(dispatch_get_main_queue()) {
                             self.showNetworkFailureAlert()
-                            self.activityIndicator.stopAnimating()
+                            self.hideStatusBarActivityIndicator()
+                            completionHandler?()
                         }
                         return
                     }
@@ -102,8 +110,9 @@ class MovieListViewController: UIViewController {
                     }
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.reloadData()
-                        self.activityIndicator.stopAnimating()
+                        self.hideStatusBarActivityIndicator()
                         CoreDataStackManager.sharedInstance().saveContext()
+                        completionHandler?()
                     }
                 }
             } else {
@@ -111,7 +120,8 @@ class MovieListViewController: UIViewController {
                     guard error == nil, let results = result?["results"] as? [[String: AnyObject]] else {
                         dispatch_async(dispatch_get_main_queue()) {
                             self.showNetworkFailureAlert()
-                            self.activityIndicator.stopAnimating()
+                            self.hideStatusBarActivityIndicator()
+                            completionHandler?()
                         }
                         return
                     }
@@ -120,21 +130,33 @@ class MovieListViewController: UIViewController {
                     }
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.reloadData()
-                        self.activityIndicator.stopAnimating()
+                        self.hideStatusBarActivityIndicator()
                         CoreDataStackManager.sharedInstance().saveContext()
+                        completionHandler?()
                     }
                 }
             }
+        } else {
+            completionHandler?()
+        }
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        performFetchWithCompletionHandler { Void in
+            refreshControl.endRefreshing()
         }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        performFetch()
+        performFetchWithCompletionHandler(nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         segmentedControl.selectedSegmentIndex = segmentedControlSavedIndex() ?? 0
         if segmentedControl.selectedSegmentIndex == 0 {
             fetchedResultsController = upcomingFetchedResultsController
