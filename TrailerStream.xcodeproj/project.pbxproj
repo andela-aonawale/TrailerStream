@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8526B98A1C01C18200D6C735 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8526B9891C01C16300D6C735 /* YouTubePlayer.framework */; };
 		859CCF641BFB801E0099C705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859CCF631BFB801E0099C705 /* AppDelegate.swift */; };
 		859CCF691BFB801F0099C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859CCF671BFB801F0099C705 /* Main.storyboard */; };
 		859CCF6B1BFB801F0099C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859CCF6A1BFB801F0099C705 /* Assets.xcassets */; };
@@ -26,9 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		85418FD91BFF16E700C61F7D /* PBXContainerItemProxy */ = {
+		8526B9881C01C16300D6C735 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */;
+			containerPortal = 8526B9841C01C16300D6C735 /* YouTubePlayer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 502AE85F1A475FD500306AD1;
 			remoteInfo = YouTubePlayer;
@@ -50,7 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YouTubePlayer.xcodeproj; path = YouTubePlayer/YouTubePlayer.xcodeproj; sourceTree = "<group>"; };
+		8526B9841C01C16300D6C735 /* YouTubePlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YouTubePlayer.xcodeproj; path = YouTubePlayer/YouTubePlayer.xcodeproj; sourceTree = "<group>"; };
 		859CCF601BFB801E0099C705 /* TrailerStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailerStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859CCF631BFB801E0099C705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859CCF681BFB801F0099C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8526B98A1C01C18200D6C735 /* YouTubePlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,10 +102,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		85418FD61BFF16E700C61F7D /* Products */ = {
+		8526B9851C01C16300D6C735 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85418FDA1BFF16E700C61F7D /* YouTubePlayer.framework */,
+				8526B9891C01C16300D6C735 /* YouTubePlayer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,7 +113,7 @@
 		859CCF571BFB801E0099C705 = {
 			isa = PBXGroup;
 			children = (
-				85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */,
+				8526B9841C01C16300D6C735 /* YouTubePlayer.xcodeproj */,
 				859CCF621BFB801E0099C705 /* TrailerStream */,
 				859CCF771BFB801F0099C705 /* TrailerStreamTests */,
 				859CCF821BFB801F0099C705 /* TrailerStreamUITests */,
@@ -261,8 +263,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 85418FD61BFF16E700C61F7D /* Products */;
-					ProjectRef = 85418FD51BFF16E700C61F7D /* YouTubePlayer.xcodeproj */;
+					ProductGroup = 8526B9851C01C16300D6C735 /* Products */;
+					ProjectRef = 8526B9841C01C16300D6C735 /* YouTubePlayer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -275,11 +277,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		85418FDA1BFF16E700C61F7D /* YouTubePlayer.framework */ = {
+		8526B9891C01C16300D6C735 /* YouTubePlayer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = YouTubePlayer.framework;
-			remoteRef = 85418FD91BFF16E700C61F7D /* PBXContainerItemProxy */;
+			remoteRef = 8526B9881C01C16300D6C735 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
